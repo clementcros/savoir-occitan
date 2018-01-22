@@ -9,6 +9,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  */
 class Result extends CI_Controller
 {
+    public $data;
 
     /**
      * Index Page for this controller.
@@ -39,12 +40,12 @@ class Result extends CI_Controller
     public function result($id)
     {
         $data['result'] = $this->Result_Model->get_articles('citys', $id);
-//        $data['commentaires']=$this->Dvd_Model->get_commentaire($id);
+        json_encode($data);
 
-         json_encode($data);
 
         $this->load->view('result', $data);
         $this->load->library('javascript');
     }
+
 
 }

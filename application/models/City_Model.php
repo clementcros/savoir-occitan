@@ -10,7 +10,7 @@ class City_Model extends CI_Model {
         $this->load->database();
     }
     public function get_articles($table) {
-        $query = $this->db->get($table, 5);
+        $query = $this->db->get($table, 10);
         return $query->result_array();
     }
 }

@@ -31,31 +31,6 @@ class Welcome extends CI_Controller {
 	{
         $data['list']=$this->City_Model->get_articles('citys');
 
-//        $json = [];
-//
-//
-//        $this->load->database();
-//
-//
-//        if(!empty($this->input->get("citys"))){
-//            $this->db->like('citys', $this->input->get("citys"));
-//            $query = $this->db->select('id,city')
-//                ->limit(10)
-//                ->get("tags");
-//            $json = $query->result();
-//        }
-//
-//
-//        echo json_encode($json);
-//        if ($this->input->is_ajax_request()) {
-//            $data = array();
-//
-//
-//            echo json_encode($data);
-//            $this->load->view('result', $data);
-//        }
-//        $sql = "SELECT city FROM citys LIMIT 5";
-//        $this->input->is_ajax_request();
 		$this->load->view('index', $data);
         $this->load->helper('url');
 	}

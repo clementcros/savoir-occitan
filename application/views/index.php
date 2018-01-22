@@ -47,6 +47,7 @@
     <a class="btn btn-primary link" href="<?php  echo site_url('result/'.$citys['id'])?>" role="button"><?php echo $citys['city'] ?></a>
 <?php endforeach; ?>
     <script src="js/search.js"></script>
+
 </body>
 
 <footer>
