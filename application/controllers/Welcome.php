@@ -17,18 +17,29 @@ class Welcome extends CI_Controller {
 	 * So any other public methods not prefixed with an underscore will
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
+     *
 	 */
-	public function index()
+
+    public function __construct() {
+        parent::__construct();
+        $this->load->model('City_Model');
+
+        $this->load->helper('url_helper');
+    }
+
+    public function index()
 	{
-        if ($this->input->is_ajax_request()) {
-            $data = array();
-
-
-            echo json_encode($data);
-            $this->load->view('result', $data);
-        }
-        $this->input->is_ajax_request();
-		$this->load->view('index');
+        $data['list']=$this->City_Model->get_articles('citys');
+//        if ($this->input->is_ajax_request()) {
+//            $data = array();
+//
+//
+//            echo json_encode($data);
+//            $this->load->view('result', $data);
+//        }
+//        $sql = "SELECT city FROM citys LIMIT 5";
+//        $this->input->is_ajax_request();
+		$this->load->view('index', $data);
         $this->load->helper('url');
 	}
 }
