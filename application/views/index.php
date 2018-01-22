@@ -2,6 +2,7 @@
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="css/home.css">
+
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
@@ -47,7 +48,29 @@
     <a class="btn btn-primary link" href="<?php  echo site_url('result/'.$citys['id'])?>" role="button"><?php echo $citys['city'] ?></a>
 <?php endforeach; ?>
     <script src="js/search.js"></script>
-
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+    <script>
+        window.addEventListener("load", function(){
+            window.cookieconsent.initialise({
+                "palette": {
+                    "popup": {
+                        "background": "#eaf7f7",
+                        "text": "#5c7291"
+                    },
+                    "button": {
+                        "background": "transparent",
+                        "text": "#56cbdb",
+                        "border": "#56cbdb"
+                    }
+                },
+                "content": {
+                    "message": "Si vous continuez la navigation sur notre site vous acceptez les cookies",
+                    "dismiss": "GO !",
+                    "link": "En savoir plus"
+                }
+            })});
+    </script>
 </body>
 
 <footer>

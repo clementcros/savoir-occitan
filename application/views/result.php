@@ -21,6 +21,7 @@
 <!--      <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />-->
 <!--      <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>-->
     <title>Shop Homepage - Start Bootstrap Template</title>
+      <link rel="stylesheet" type="text/css" href="../../css/home.css">
 
     <!-- Bootstrap core CSS -->
     <link href="../../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
