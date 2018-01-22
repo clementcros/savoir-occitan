@@ -30,8 +30,10 @@
 <br>
 
     <div class="intro">
-        <p class="text-intro">Les meilleurs produits locaux faciles d'accès sur la première plateforme de référencement en ligne saisissez une ville ou géolocalisez-vous pour vous laisser surprendre.</p>
-        <form action="<?php echo current_url(); ?>" method="POST" autocomplete="on">
+        <p class="text-intro">Les meilleurs produits locaux faciles d'accès sur la première plateforme de référencement en ligne saisissez une ville ou géolocalisez-vous
+            pour vous laisser surprendre.</p>
+<!--        <form action="--><?php //echo current_url(); ?><!--" method="POST" autocomplete="on">-->
+        <form method="post" accept-charset="utf-8" action="<?php echo site_url("Result_city/result_city"); ?>">
         <div class="search-bar"><select class="itemName form-control" style="width:500px" name="itemName"></select> <br><br> <button type="submit" class="btn btn-warning btn-lg">recherche</button></div>
         </form>
         <p style="text-align: center; color: white; font-size: 30px">OU</p>
@@ -42,7 +44,7 @@
 <br>
 <div class="list-ville">
 <?php foreach($list as $citys): ?>
-    <a class="btn btn-primary link" href="<?php echo site_url($citys['id'])?>" role="button"><?php echo $citys['city'] ?></a>
+    <a class="btn btn-primary link" href="<?php  echo site_url('result/'.$citys['id'])?>" role="button"><?php echo $citys['city'] ?></a>
 <?php endforeach; ?>
     <script src="js/search.js"></script>
 </body>
