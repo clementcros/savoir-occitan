@@ -1,0 +1,58 @@
+
+
+body {
+    background-image: url("../img/vigne1.jpg");
+
+
+    /* Full height */
+    height: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.logo {
+    text-align: center;
+}
+
+.logo img {
+    width: 10%;
+    padding-top: 25px;
+    margin-bottom: 50px;
+}
+
+.search-bar {
+    text-align: center;
+    padding-left: 25%;
+    padding-right: 25%;
+    margin-bottom: 25px;
+}
+
+.class {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+    max-width: none !important;
+}
+
+.intro {
+    background-color: transparent;
+}
+
+.text-intro {
+    /*bottom: 25%;*/
+    /*font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;*/
+    font-size: 36px !important;
+    text-align: center;
+    margin:50px;
+
+
+    /*padding-top: 5% !important;*/
+    /*padding-bottom: 25% !important;*/
+    color: white !important;
+}
+.geoloc {
+    text-align: center;
+}
