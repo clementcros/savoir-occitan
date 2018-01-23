@@ -27,20 +27,26 @@ class Examples extends CI_Controller
 
     public function index()
     {
+//        $this->security();
         $this->_example_output((object)array('output' => '', 'js_files' => array(), 'css_files' => array()));
     }
 
     public function villes()
     {
+        $this->security();
         try {
             $crud = new grocery_CRUD();
 
             $crud->set_theme('datatables');
             $crud->set_table('citys');
-            $crud->set_subject('citys');
+            $crud->set_subject('une ville');
             $crud->required_fields('citys');
-            $crud->columns('id', 'city');
+            $crud->columns('id', 'city', 'post_code','image_1','iamge_2','image_3');
 
+            $crud->set_field_upload('image_1', 'assets/uploads/files');
+            $crud->set_field_upload('iamge_2', 'assets/uploads/files');
+
+            $crud->set_field_upload('image_3', 'assets/uploads/files');
             $output = $crud->render();
 
             $this->_example_output($output);
@@ -52,11 +58,14 @@ class Examples extends CI_Controller
 
     public function produit()
     {
+        $this->security();
         $crud = new grocery_CRUD();
 
         $crud->set_theme('datatables');
         $crud->set_table('produit');
         $crud->set_relation('id_ville', 'citys', 'city');
+        $crud->set_relation('id_category', 'category', 'type');
+        $crud->set_relation('id_client', 'clients', 'nom');
         $crud->set_subject('Un produit');
         $crud->columns('id', 'id_ville', 'id_client', 'nom', 'description', 'image_1', 'image_2', 'image_3', 'id_category', 'prix', 'offre_special');
 
@@ -73,34 +82,27 @@ class Examples extends CI_Controller
         $this->_example_output($output);
     }
 
-    public function carouselle()
+    public function category()
     {
+        $this->security();
         $crud = new grocery_CRUD();
 
-        $crud->set_table('carouselle');
-        $crud->columns('id', 'image_1', 'image_2', 'image_3');
-        $crud->set_relation('id_ville', 'citys', 'city');
-        $crud->set_subject('carouselle');
-        $crud->set_field_upload('image_1', 'assets/uploads/files');
-        $crud->set_field_upload('image_2', 'assets/uploads/files');
-
-        $crud->set_field_upload('image_3', 'assets/uploads/files');
+        $crud->set_table('category');
+        $crud->columns('id', 'type');
+        $crud->set_subject('category');
 
         $output = $crud->render();
 
         $this->_example_output($output);
     }
 
-    public function orders_management()
+    public function clients()
     {
         $crud = new grocery_CRUD();
-
-        $crud->set_relation('customerNumber', 'customers', '{contactLastName} {contactFirstName}');
-        $crud->display_as('customerNumber', 'Customer');
-        $crud->set_table('orders');
-        $crud->set_subject('Order');
-        $crud->unset_add();
-        $crud->unset_delete();
+        $crud->set_theme('datatables');
+        $crud->set_table('clients');
+        $crud->set_subject('Un client');
+        $crud->columns('id', 'nom', 'prenom', 'mail', 'user', 'password', 'info');
 
         $output = $crud->render();
 
@@ -248,6 +250,11 @@ class Examples extends CI_Controller
             $this->_example_output($output);
         } else {
             return $output;
+        }
+    }
+    private function security() {
+        if (isset($_SESSION['admin'])) {
+            return redirect('admin/connexion', 'refresh');
         }
     }
 
