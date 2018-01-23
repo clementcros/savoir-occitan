@@ -57,3 +57,4 @@ $route['translate_uri_dashes'] = FALSE;
 $route['search'] = "search/index";
 $route['result/(:any)'] = 'Result/result/$1';
 $route['Json'] = "Result/jsonData";
+$route ['administration'] = 'Examples';

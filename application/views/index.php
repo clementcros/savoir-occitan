@@ -2,6 +2,7 @@
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="css/home.css">
+
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
@@ -30,9 +31,7 @@
 <br>
 
     <div class="intro">
-        <p class="text-intro">Les meilleurs produits locaux faciles d'accès sur la première plateforme de référencement en ligne saisissez une ville ou géolocalisez-vous
-            pour vous laisser surprendre.</p>
-<!--        <form action="--><?php //echo current_url(); ?><!--" method="POST" autocomplete="on">-->
+        <p class="text-intro">Les meilleurs produits locaux faciles d'accès sur la première plate-forme de référencement en ligne saisissez une ville ou géolocalisez-vous pour vous laisser surprendre.</p>
         <form method="post" accept-charset="utf-8" action="<?php echo site_url("Result_city/result_city"); ?>">
         <div class="search-bar"><select class="itemName form-control" style="width:500px" name="itemName"></select> <br><br> <button type="submit" class="btn btn-warning btn-lg">recherche</button></div>
         </form>
@@ -47,13 +46,37 @@
     <a class="btn btn-primary link" href="<?php  echo site_url('result/'.$citys['id'])?>" role="button"><?php echo $citys['city'] ?></a>
 <?php endforeach; ?>
     <script src="js/search.js"></script>
-
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+    <script>
+        window.addEventListener("load", function(){
+            window.cookieconsent.initialise({
+                "palette": {
+                    "popup": {
+                        "background": "#eaf7f7",
+                        "text": "#5c7291"
+                    },
+                    "button": {
+                        "background": "transparent",
+                        "text": "#56cbdb",
+                        "border": "#56cbdb"
+                    }
+                },
+                "content": {
+                    "message": "Si vous continuez la navigation sur notre site vous acceptez les cookies",
+                    "dismiss": "GO !",
+                    "link": "En savoir plus"
+                }
+            })});
+    </script>
 </body>
 
 <footer>
 
     <div class="git">
-        <a class="github-button" href="https://github.com/clementcros/savoir-occitan" aria-label="Follow clement and gabin on GitHub">Follow us</a>
+
+        <a class="github-button" href="https://github.com/clementcros/savoir-occitan" aria-label="Follow clement and gabin on GitHub">Follow us</a><p style="color: white;">V0.1</p>
+
     </div>
 
 
