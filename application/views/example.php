@@ -18,8 +18,12 @@ foreach($css_files as $file): ?>
 <?php foreach($js_files as $file): ?>
 	<script src="<?php echo $file; ?>"></script>
 <?php endforeach; ?>
+    <style>
+        body {
+            background-image: url("https://les3pinardiers.com/wp-content/uploads/2016/10/raisins-sur-pieds_06.jpg");
+        }
+    </style>
 </head>
-<body>
 <nav class="navbar navbar-light bg-faded">
     <form class="form-inline">
         <button class="btn btn-outline-success" type="button"><a href=""<?php echo site_url()?>">Accueil</a></button>

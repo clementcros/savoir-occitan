@@ -13,9 +13,9 @@ class Data_Product_Model extends CI_Model
         $this->load->database();
     }
 
-    public function get_dataProduct($table, $id)
+    public function get_dataProduct($id)
     {
-        $query = $this->db->query('SELECT citys.city,`nom`,`description`, `prix`, `offre_special` FROM produit INNER JOIN '.$table.' WHERE produit.id = '.$id);
-        return $query->result_array();
+        $query = $this->db->query('SELECT COUNT(produit.nom) FROM  produit WHERE produit.id_ville = '.$id);
+        return $query->result();
     }
 }

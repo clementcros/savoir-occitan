@@ -34,16 +34,18 @@ class Result extends CI_Controller
         $this->load->model('Result_Model');
         $this->load->model('City_Model');
         $this->load->model('Data_Product_Model');
-
+        $this->load->model('Carouselle_Model');
         $this->load->helper('url_helper');
     }
 
 
     public function result($id)
     {
-        $data['result'] = $this->Result_Model->get_articles('citys', $id);
+        $data['data'] = $this->Result_Model->get_articles('citys', $id);
+        $result['result'] = $this->Result_Model->get_data($id);
+        $carouselle['carouselle'] = $this->Carouselle_Model->get_carouselle($id);
+        $product['produits'] = $this->Data_Product_Model->get_dataProduct($id);
 
-        $product['produits'] = $this->Data_Product_Model->get_dataProduct('citys', $id);
         $getData = count($product['produits']);
         if ($getData == 0) {
             $data['list']=$this->City_Model->get_articles('citys');
@@ -51,11 +53,8 @@ class Result extends CI_Controller
             $this->load->library('javascript');
         }
         else {
-
-
             json_encode($data);
-
-
+            $data = $data + $result + $carouselle;
             $this->load->view('result', $data);
             $this->load->library('javascript');
         }

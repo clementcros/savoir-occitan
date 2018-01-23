@@ -1,248 +1,254 @@
-<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
-class Examples extends CI_Controller {
+class Examples extends CI_Controller
+{
 
-	public function __construct()
-	{
-		parent::__construct();
+    public function __construct()
+    {
+        parent::__construct();
 
-		$this->load->database();
-		$this->load->helper('url');
+        $this->load->database();
+        $this->load->helper('url');
 
-		$this->load->library('grocery_CRUD');
-	}
+        $this->load->library('grocery_CRUD');
+    }
 
-	public function _example_output($output = null)
-	{
-		$this->load->view('example.php',(array)$output);
-	}
+    public function _example_output($output = null)
+    {
+        $this->load->view('example.php', (array)$output);
+    }
 
-	public function offices()
-	{
-		$output = $this->grocery_crud->render();
+    public function offices()
+    {
+        $output = $this->grocery_crud->render();
 
-		$this->_example_output($output);
-	}
+        $this->_example_output($output);
+    }
 
-	public function index()
-	{
-		$this->_example_output((object)array('output' => '' , 'js_files' => array() , 'css_files' => array()));
-	}
+    public function index()
+    {
+        $this->_example_output((object)array('output' => '', 'js_files' => array(), 'css_files' => array()));
+    }
 
-	public function villes()
-	{
-		try{
-			$crud = new grocery_CRUD();
+    public function villes()
+    {
+        try {
+            $crud = new grocery_CRUD();
 
-			$crud->set_theme('datatables');
-			$crud->set_table('citys');
-			$crud->set_subject('citys');
-			$crud->required_fields('citys');
-			$crud->columns('id','city');
+            $crud->set_theme('datatables');
+            $crud->set_table('citys');
+            $crud->set_subject('citys');
+            $crud->required_fields('citys');
+            $crud->columns('id', 'city');
 
-			$output = $crud->render();
+            $output = $crud->render();
 
-			$this->_example_output($output);
+            $this->_example_output($output);
 
-		}catch(Exception $e){
-			show_error($e->getMessage().' --- '.$e->getTraceAsString());
-		}
-	}
+        } catch (Exception $e) {
+            show_error($e->getMessage() . ' --- ' . $e->getTraceAsString());
+        }
+    }
 
-	public function employees_management()
-	{
-			$crud = new grocery_CRUD();
+    public function produit()
+    {
+        $crud = new grocery_CRUD();
 
-			$crud->set_theme('datatables');
-			$crud->set_table('employees');
-			$crud->set_relation('officeCode','offices','city');
-			$crud->display_as('officeCode','Office City');
-			$crud->set_subject('Employee');
+        $crud->set_theme('datatables');
+        $crud->set_table('produit');
+        $crud->set_relation('id_ville', 'citys', 'city');
+        $crud->set_subject('Un produit');
+        $crud->columns('id', 'id_ville', 'id_client', 'nom', 'description', 'image_1', 'image_2', 'image_3', 'id_category', 'prix', 'offre_special');
 
-			$crud->required_fields('lastName');
+        $crud->required_fields('lastName');
 
-			$crud->set_field_upload('file_url','assets/uploads/files');
+        $crud->set_field_upload('image_1', 'assets/uploads/files');
+        $crud->set_field_upload('image_2', 'assets/uploads/files');
 
-			$output = $crud->render();
+        $crud->set_field_upload('image_3', 'assets/uploads/files');
 
-			$this->_example_output($output);
-	}
 
-	public function customers_management()
-	{
-			$crud = new grocery_CRUD();
+        $output = $crud->render();
 
-			$crud->set_table('customers');
-			$crud->columns('customerName','contactLastName','phone','city','country','salesRepEmployeeNumber','creditLimit');
-			$crud->display_as('salesRepEmployeeNumber','from Employeer')
-				 ->display_as('customerName','Name')
-				 ->display_as('contactLastName','Last Name');
-			$crud->set_subject('Customer');
-			$crud->set_relation('salesRepEmployeeNumber','employees','lastName');
+        $this->_example_output($output);
+    }
 
-			$output = $crud->render();
+    public function carouselle()
+    {
+        $crud = new grocery_CRUD();
 
-			$this->_example_output($output);
-	}
+        $crud->set_table('carouselle');
+        $crud->columns('id', 'image_1', 'image_2', 'image_3');
+        $crud->set_relation('id_ville', 'citys', 'city');
+        $crud->set_subject('carouselle');
+        $crud->set_field_upload('image_1', 'assets/uploads/files');
+        $crud->set_field_upload('image_2', 'assets/uploads/files');
 
-	public function orders_management()
-	{
-			$crud = new grocery_CRUD();
+        $crud->set_field_upload('image_3', 'assets/uploads/files');
 
-			$crud->set_relation('customerNumber','customers','{contactLastName} {contactFirstName}');
-			$crud->display_as('customerNumber','Customer');
-			$crud->set_table('orders');
-			$crud->set_subject('Order');
-			$crud->unset_add();
-			$crud->unset_delete();
+        $output = $crud->render();
 
-			$output = $crud->render();
+        $this->_example_output($output);
+    }
 
-			$this->_example_output($output);
-	}
+    public function orders_management()
+    {
+        $crud = new grocery_CRUD();
 
-	public function products_management()
-	{
-			$crud = new grocery_CRUD();
+        $crud->set_relation('customerNumber', 'customers', '{contactLastName} {contactFirstName}');
+        $crud->display_as('customerNumber', 'Customer');
+        $crud->set_table('orders');
+        $crud->set_subject('Order');
+        $crud->unset_add();
+        $crud->unset_delete();
 
-			$crud->set_table('products');
-			$crud->set_subject('Product');
-			$crud->unset_columns('productDescription');
-			$crud->callback_column('buyPrice',array($this,'valueToEuro'));
+        $output = $crud->render();
 
-			$output = $crud->render();
+        $this->_example_output($output);
+    }
 
-			$this->_example_output($output);
-	}
+    public function products_management()
+    {
+        $crud = new grocery_CRUD();
 
-	public function valueToEuro($value, $row)
-	{
-		return $value.' &euro;';
-	}
+        $crud->set_table('products');
+        $crud->set_subject('Product');
+        $crud->unset_columns('productDescription');
+        $crud->callback_column('buyPrice', array($this, 'valueToEuro'));
 
-	public function film_management()
-	{
-		$crud = new grocery_CRUD();
+        $output = $crud->render();
 
-		$crud->set_table('film');
-		$crud->set_relation_n_n('actors', 'film_actor', 'actor', 'film_id', 'actor_id', 'fullname','priority');
-		$crud->set_relation_n_n('category', 'film_category', 'category', 'film_id', 'category_id', 'name');
-		$crud->unset_columns('special_features','description','actors');
+        $this->_example_output($output);
+    }
 
-		$crud->fields('title', 'description', 'actors' ,  'category' ,'release_year', 'rental_duration', 'rental_rate', 'length', 'replacement_cost', 'rating', 'special_features');
+    public function valueToEuro($value, $row)
+    {
+        return $value . ' &euro;';
+    }
 
-		$output = $crud->render();
+    public function film_management()
+    {
+        $crud = new grocery_CRUD();
 
-		$this->_example_output($output);
-	}
+        $crud->set_table('film');
+        $crud->set_relation_n_n('actors', 'film_actor', 'actor', 'film_id', 'actor_id', 'fullname', 'priority');
+        $crud->set_relation_n_n('category', 'film_category', 'category', 'film_id', 'category_id', 'name');
+        $crud->unset_columns('special_features', 'description', 'actors');
 
-	public function film_management_twitter_bootstrap()
-	{
-		try{
-			$crud = new grocery_CRUD();
+        $crud->fields('title', 'description', 'actors', 'category', 'release_year', 'rental_duration', 'rental_rate', 'length', 'replacement_cost', 'rating', 'special_features');
 
-			$crud->set_theme('twitter-bootstrap');
-			$crud->set_table('film');
-			$crud->set_relation_n_n('actors', 'film_actor', 'actor', 'film_id', 'actor_id', 'fullname','priority');
-			$crud->set_relation_n_n('category', 'film_category', 'category', 'film_id', 'category_id', 'name');
-			$crud->unset_columns('special_features','description','actors');
+        $output = $crud->render();
 
-			$crud->fields('title', 'description', 'actors' ,  'category' ,'release_year', 'rental_duration', 'rental_rate', 'length', 'replacement_cost', 'rating', 'special_features');
+        $this->_example_output($output);
+    }
 
-			$output = $crud->render();
-			$this->_example_output($output);
+    public function film_management_twitter_bootstrap()
+    {
+        try {
+            $crud = new grocery_CRUD();
 
-		}catch(Exception $e){
-			show_error($e->getMessage().' --- '.$e->getTraceAsString());
-		}
-	}
+            $crud->set_theme('twitter-bootstrap');
+            $crud->set_table('film');
+            $crud->set_relation_n_n('actors', 'film_actor', 'actor', 'film_id', 'actor_id', 'fullname', 'priority');
+            $crud->set_relation_n_n('category', 'film_category', 'category', 'film_id', 'category_id', 'name');
+            $crud->unset_columns('special_features', 'description', 'actors');
 
-	function multigrids()
-	{
-		$this->config->load('grocery_crud');
-		$this->config->set_item('grocery_crud_dialog_forms',true);
-		$this->config->set_item('grocery_crud_default_per_page',10);
+            $crud->fields('title', 'description', 'actors', 'category', 'release_year', 'rental_duration', 'rental_rate', 'length', 'replacement_cost', 'rating', 'special_features');
 
-		$output1 = $this->offices_management2();
+            $output = $crud->render();
+            $this->_example_output($output);
 
-		$output2 = $this->employees_management2();
+        } catch (Exception $e) {
+            show_error($e->getMessage() . ' --- ' . $e->getTraceAsString());
+        }
+    }
 
-		$output3 = $this->customers_management2();
+    function multigrids()
+    {
+        $this->config->load('grocery_crud');
+        $this->config->set_item('grocery_crud_dialog_forms', true);
+        $this->config->set_item('grocery_crud_default_per_page', 10);
 
-		$js_files = $output1->js_files + $output2->js_files + $output3->js_files;
-		$css_files = $output1->css_files + $output2->css_files + $output3->css_files;
-		$output = "<h1>List 1</h1>".$output1->output."<h1>List 2</h1>".$output2->output."<h1>List 3</h1>".$output3->output;
+        $output1 = $this->offices_management2();
 
-		$this->_example_output((object)array(
-				'js_files' => $js_files,
-				'css_files' => $css_files,
-				'output'	=> $output
-		));
-	}
+        $output2 = $this->employees_management2();
 
-	public function offices_management2()
-	{
-		$crud = new grocery_CRUD();
-		$crud->set_table('offices');
-		$crud->set_subject('Office');
+        $output3 = $this->customers_management2();
 
-		$crud->set_crud_url_path(site_url(strtolower(__CLASS__."/".__FUNCTION__)),site_url(strtolower(__CLASS__."/multigrids")));
+        $js_files = $output1->js_files + $output2->js_files + $output3->js_files;
+        $css_files = $output1->css_files + $output2->css_files + $output3->css_files;
+        $output = "<h1>List 1</h1>" . $output1->output . "<h1>List 2</h1>" . $output2->output . "<h1>List 3</h1>" . $output3->output;
 
-		$output = $crud->render();
+        $this->_example_output((object)array(
+            'js_files' => $js_files,
+            'css_files' => $css_files,
+            'output' => $output
+        ));
+    }
 
-		if($crud->getState() != 'list') {
-			$this->_example_output($output);
-		} else {
-			return $output;
-		}
-	}
+    public function offices_management2()
+    {
+        $crud = new grocery_CRUD();
+        $crud->set_table('offices');
+        $crud->set_subject('Office');
 
-	public function employees_management2()
-	{
-		$crud = new grocery_CRUD();
+        $crud->set_crud_url_path(site_url(strtolower(__CLASS__ . "/" . __FUNCTION__)), site_url(strtolower(__CLASS__ . "/multigrids")));
 
-		$crud->set_theme('datatables');
-		$crud->set_table('employees');
-		$crud->set_relation('officeCode','offices','city');
-		$crud->display_as('officeCode','Office City');
-		$crud->set_subject('Employee');
+        $output = $crud->render();
 
-		$crud->required_fields('lastName');
+        if ($crud->getState() != 'list') {
+            $this->_example_output($output);
+        } else {
+            return $output;
+        }
+    }
 
-		$crud->set_field_upload('file_url','assets/uploads/files');
+    public function employees_management2()
+    {
+        $crud = new grocery_CRUD();
 
-		$crud->set_crud_url_path(site_url(strtolower(__CLASS__."/".__FUNCTION__)),site_url(strtolower(__CLASS__."/multigrids")));
+        $crud->set_theme('datatables');
+        $crud->set_table('employees');
+        $crud->set_relation('officeCode', 'offices', 'city');
+        $crud->display_as('officeCode', 'Office City');
+        $crud->set_subject('Employee');
 
-		$output = $crud->render();
+        $crud->required_fields('lastName');
 
-		if($crud->getState() != 'list') {
-			$this->_example_output($output);
-		} else {
-			return $output;
-		}
-	}
+        $crud->set_field_upload('file_url', 'assets/uploads/files');
 
-	public function customers_management2()
-	{
-		$crud = new grocery_CRUD();
+        $crud->set_crud_url_path(site_url(strtolower(__CLASS__ . "/" . __FUNCTION__)), site_url(strtolower(__CLASS__ . "/multigrids")));
 
-		$crud->set_table('customers');
-		$crud->columns('customerName','contactLastName','phone','city','country','salesRepEmployeeNumber','creditLimit');
-		$crud->display_as('salesRepEmployeeNumber','from Employeer')
-			 ->display_as('customerName','Name')
-			 ->display_as('contactLastName','Last Name');
-		$crud->set_subject('Customer');
-		$crud->set_relation('salesRepEmployeeNumber','employees','lastName');
+        $output = $crud->render();
 
-		$crud->set_crud_url_path(site_url(strtolower(__CLASS__."/".__FUNCTION__)),site_url(strtolower(__CLASS__."/multigrids")));
+        if ($crud->getState() != 'list') {
+            $this->_example_output($output);
+        } else {
+            return $output;
+        }
+    }
 
-		$output = $crud->render();
+    public function customers_management2()
+    {
+        $crud = new grocery_CRUD();
 
-		if($crud->getState() != 'list') {
-			$this->_example_output($output);
-		} else {
-			return $output;
-		}
-	}
+        $crud->set_table('customers');
+        $crud->columns('customerName', 'contactLastName', 'phone', 'city', 'country', 'salesRepEmployeeNumber', 'creditLimit');
+        $crud->display_as('salesRepEmployeeNumber', 'from Employeer')
+            ->display_as('customerName', 'Name')
+            ->display_as('contactLastName', 'Last Name');
+        $crud->set_subject('Customer');
+        $crud->set_relation('salesRepEmployeeNumber', 'employees', 'lastName');
+
+        $crud->set_crud_url_path(site_url(strtolower(__CLASS__ . "/" . __FUNCTION__)), site_url(strtolower(__CLASS__ . "/multigrids")));
+
+        $output = $crud->render();
+
+        if ($crud->getState() != 'list') {
+            $this->_example_output($output);
+        } else {
+            return $output;
+        }
+    }
 
 }
