@@ -25,3 +25,10 @@ pour le commenter.
 ### Controller + Model
 
 Chaque controllers disposent de sont propre Model pour la récupération et le traitement des données
+
+## Gestion du contenue 
+
+### CRUD Admin :
+
+Le module grocery crud a été intégrer pour facilité la gestion du contenue de la base de données, Ce dernier servira au producteurs pour pouvroir
+ mettrent a jour facilement le contenue tous comme générer facilement un accés super-admin pour modérer le contenus.
