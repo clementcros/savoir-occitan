@@ -5,7 +5,7 @@ import { Grid, Row, Col } from 'react-bootstrap'
 import Product from '../components/Product'
 
 
-const Products = ({products}) => {
+const createProductsTable = (products) => {
 	let productsTable = [];
 	let rowTable = [];
 	let i = 0;
@@ -19,15 +19,23 @@ const Products = ({products}) => {
 	if (rowTable.length > 0) {
 		productsTable.push(rowTable);
 	}
+	return productsTable;
+}
+
+
+const Products = ({categories, products}) => {
+	const productsTable = createProductsTable(products);
+	let i = 0;
 	return (
 		<Grid>
 			{productsTable.map((row) => (
-				<Row>
+				<Row key={i++}>
 					{row.map((prod) => (
-						<Col md={3}>
+						<Col md={3} key={prod.id}>
 							<Product
 								key={prod.id}
 								product={prod}
+								categories={categories}
 							/>
 						</Col>
 					))}
@@ -36,20 +44,6 @@ const Products = ({products}) => {
 		</Grid>
 	);
 }
-
-
-// const Products = ({products}) => {
-	
-// 	return (<div>
-// 		{products.map((prod) => (
-// 			<Product 
-// 				key={prod.id}
-// 				product={prod}
-// 			/>
-// 		))}
-// 	</div>)
-// }
-
 
 
 Products.propTypes = {
