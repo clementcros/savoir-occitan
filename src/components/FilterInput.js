@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { FormGroup, FormControl, ControlLabel } from 'react-bootstrap'
 
 
-class SearchCity extends React.Component {
+class FilterInput extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -18,22 +18,21 @@ class SearchCity extends React.Component {
 	render() {
 		return (
 			<FormGroup>
-				<ControlLabel>Ville</ControlLabel>
 				<FormControl 
 					type="text"
 					value={this.state.fieldValue}
-					placeholder="Choisissez une autre ville"
-					onChange={(event) => {this.handleOnChange(event)}}
+					placeholder={this.props.text}
+					onChange={(event) => this.handleOnChange(event)}
 				/>
 			</FormGroup>
-		)	
+		);
 	}
 }
 
 
-SearchCity.propTypes = {
+FilterInput.propTypes = {
 	
 }
 
 
-export default SearchCity;
+export default FilterInput;

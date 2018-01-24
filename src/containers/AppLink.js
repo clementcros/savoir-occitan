@@ -88,7 +88,8 @@ const data = {
 					"id_category": "1000",
 					"id_label": "-1",
 					"prix": "12",
-					"special_offer": "parce que ca le vaut bien"
+					"special_offer": "parce que ca le vaut bien",
+					"note": "4"
 				},
 				{
 					"id": "20",
@@ -102,7 +103,8 @@ const data = {
 					"id_category": "2000",
 					"id_label": "-1",
 					"prix": "6",
-					"special_offer": "parce que ca le vaut bien"
+					"special_offer": "parce que ca le vaut bien",
+					"note": "4"
 				},
 				{
 					"id": "30",
@@ -116,7 +118,8 @@ const data = {
 					"id_category": "3000",
 					"id_label": "-1",
 					"prix": "34",
-					"special_offer": "parce que ca le vaut bien"
+					"special_offer": "parce que ca le vaut bien",
+					"note": "5"
 				}
 			]
 		},
@@ -141,7 +144,8 @@ const data = {
 					"id_category": "1000",
 					"id_label": "-1",
 					"prix": "56",
-					"special_offer": "parce que ca le vaut bien"
+					"special_offer": "parce que ca le vaut bien",
+					"note": "3"
 				},
 				{
 					"id": "41",
@@ -155,7 +159,8 @@ const data = {
 					"id_category": "1000",
 					"id_label": "-1",
 					"prix": "33",
-					"special_offer": "parce que ca le vaut bien"
+					"special_offer": "parce que ca le vaut bien",
+					"note": "3"
 				},
 				{
 					"id": "42",
@@ -169,7 +174,8 @@ const data = {
 					"id_category": "1000",
 					"id_label": "-1",
 					"prix": "36",
-					"special_offer": "parce que ca le vaut bien"
+					"special_offer": "parce que ca le vaut bien",
+					"note": "4"
 				},
 				{
 					"id": "43",
@@ -183,7 +189,8 @@ const data = {
 					"id_category": "1000",
 					"id_label": "-1",
 					"prix": "12",
-					"special_offer": "parce que ca le vaut bien"
+					"special_offer": "parce que ca le vaut bien",
+					"note": "2"
 				},
 				{
 					"id": "44",
@@ -197,7 +204,8 @@ const data = {
 					"id_category": "1000",
 					"id_label": "-1",
 					"prix": "29",
-					"special_offer": "parce que ca le vaut bien"
+					"special_offer": "parce que ca le vaut bien",
+					"note": "5"
 				}
 			]
 		},
@@ -222,7 +230,8 @@ const data = {
 					"id_category": "3000",
 					"id_label": "-1",
 					"prix": "12",
-					"special_offer": "parce que ca le vaut bien"
+					"special_offer": "parce que ca le vaut bien",
+					"note": "4"
 				},
 				{
 					"id": "52",
@@ -236,7 +245,8 @@ const data = {
 					"id_category": "3000",
 					"id_label": "-1",
 					"prix": "12",
-					"special_offer": "parce que ca le vaut bien"
+					"special_offer": "parce que ca le vaut bien",
+					"note": "4"
 				},
 				{
 					"id": "56",
@@ -250,7 +260,8 @@ const data = {
 					"id_category": "3000",
 					"id_label": "-1",
 					"prix": "12",
-					"special_offer": "parce que ca le vaut bien"
+					"special_offer": "parce que ca le vaut bien",
+					"note": "5"
 				},
 				{
 					"id": "58",
@@ -264,7 +275,8 @@ const data = {
 					"id_category": "2000",
 					"id_label": "-1",
 					"prix": "12",
-					"special_offer": "parce que ca le vaut bien"
+					"special_offer": "parce que ca le vaut bien",
+					"note": "2"
 				}
 			]
 		}
@@ -282,7 +294,8 @@ const data = {
 			"id_category": "3000",
 			"id_label": "-1",
 			"prix": "12",
-			"special_offer": "parce que ca le vaut bien"
+			"special_offer": "parce que ca le vaut bien",
+			"note": "4"
 		},
 		{
 			"id": "52",
@@ -296,7 +309,8 @@ const data = {
 			"id_category": "3000",
 			"id_label": "-1",
 			"prix": "12",
-			"special_offer": "parce que ca le vaut bien"
+			"special_offer": "parce que ca le vaut bien",
+			"note": "4"
 		},
 		{
 			"id": "56",
@@ -310,7 +324,8 @@ const data = {
 			"id_category": "3000",
 			"id_label": "-1",
 			"prix": "12",
-			"special_offer": "parce que ca le vaut bien"
+			"special_offer": "parce que ca le vaut bien",
+			"note": "3"
 		},
 		{
 			"id": "58",
@@ -324,7 +339,8 @@ const data = {
 			"id_category": "2000",
 			"id_label": "-1",
 			"prix": "12",
-			"special_offer": "parce que ca le vaut bien"
+			"special_offer": "parce que ca le vaut bien",
+			"note": "3"
 		},
 		{
 			"id": "40",
@@ -338,7 +354,8 @@ const data = {
 			"id_category": "1000",
 			"id_label": "-1",
 			"prix": "56",
-			"special_offer": "parce que ca le vaut bien"
+			"special_offer": "parce que ca le vaut bien",
+			"note": "4"
 		},
 		{
 			"id": "41",
@@ -352,7 +369,8 @@ const data = {
 			"id_category": "1000",
 			"id_label": "-1",
 			"prix": "33",
-			"special_offer": "parce que ca le vaut bien"
+			"special_offer": "parce que ca le vaut bien",
+			"note": "2"
 		},
 		{
 			"id": "42",
@@ -366,7 +384,8 @@ const data = {
 			"id_category": "1000",
 			"id_label": "-1",
 			"prix": "36",
-			"special_offer": "parce que ca le vaut bien"
+			"special_offer": "parce que ca le vaut bien",
+			"note": "5"
 		},
 		{
 			"id": "43",
@@ -380,7 +399,8 @@ const data = {
 			"id_category": "1000",
 			"id_label": "-1",
 			"prix": "12",
-			"special_offer": "parce que ca le vaut bien"
+			"special_offer": "parce que ca le vaut bien",
+			"note": "4"
 		},
 		{
 			"id": "44",
@@ -394,7 +414,8 @@ const data = {
 			"id_category": "1000",
 			"id_label": "-1",
 			"prix": "29",
-			"special_offer": "parce que ca le vaut bien"
+			"special_offer": "parce que ca le vaut bien",
+			"note": "4"
 		},
 		{
 			"id": "10",
@@ -408,7 +429,8 @@ const data = {
 			"id_category": "1000",
 			"id_label": "-1",
 			"prix": "12",
-			"special_offer": "parce que ca le vaut bien"
+			"special_offer": "parce que ca le vaut bien",
+			"note": "5"
 		},
 		{
 			"id": "20",
@@ -422,7 +444,8 @@ const data = {
 			"id_category": "2000",
 			"id_label": "-1",
 			"prix": "6",
-			"special_offer": "parce que ca le vaut bien"
+			"special_offer": "parce que ca le vaut bien",
+			"note": "2"
 		},
 		{
 			"id": "30",
@@ -436,7 +459,8 @@ const data = {
 			"id_category": "3000",
 			"id_label": "-1",
 			"prix": "34",
-			"special_offer": "parce que ca le vaut bien"
+			"special_offer": "parce que ca le vaut bien",
+			"note": "5"
 		}
 	],
 	"categories": [

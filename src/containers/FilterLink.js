@@ -1,10 +1,11 @@
 import { connect } from 'react-redux'
-import Filter from '../components/Filter'
+import Filters from '../components/Filters'
 
 
 const mapStateToProps = (state, props) => {
 	return {
-
+		products: state.data.products,
+		categories: state.data.categories
 	}
 }
 
@@ -19,6 +20,6 @@ const mapDisplayToProps = (display, props) => {
 const FilterLink = connect(
 	mapStateToProps,
 	mapDisplayToProps
-)(Filter)
+)(Filters)
 
 export default FilterLink;
