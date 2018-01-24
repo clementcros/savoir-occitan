@@ -19,6 +19,6 @@ class Json extends CI_Controller {
         $data['²data'] = $this->Result_Model->get_data($id);
         $json = json_encode($data);
         print_r($json);
-        $this->load->view('json');
+//        $this->load->view('json', $json );
     }
 }

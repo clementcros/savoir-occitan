@@ -153,6 +153,11 @@
     footer {
         position: relative; bottom: 0; left: 0; right: 0
             }
+    .card-img-top {
+        object-fit: cover;
+    }
+
+  }
 </style>
 
 </html>

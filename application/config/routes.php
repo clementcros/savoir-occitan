@@ -58,6 +58,7 @@ $route['search'] = "search/index";
 $route['result/(:any)'] = 'Result/result/$1';
 $route['json'] = "Result/json";
 $route ['administration'] = 'Examples';
+$route ['partenaire'] = 'Partenaire';
 
 // Routes du controller Admin
 
