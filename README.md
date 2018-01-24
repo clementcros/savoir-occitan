@@ -1,6 +1,20 @@
 # savoir-occitan
 projet de colaboration
 
+#configuration :
+
+## config
+pour faire fonctionner en local le projet in faut paramètrer plusieur fichier 
+- database.php
+
+Renseignner les différents paramètre lié a votre bdd en local
+
+- Config.php
+
+$config['base_url'] = 'la route de votre virtual host';
+ 
+
+    
 
 ##routes :
 
@@ -14,6 +28,7 @@ Si l'id de la ville ne propose pas de produits alors le controller vas redirigé
 
 /index.php/product_$id -> correspond au descriptif d'un produit 
 
+toutes les routes sont disponible dans le fichier config/routes.php
 
 ## Foncitonnement logique
 
