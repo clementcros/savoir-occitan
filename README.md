@@ -1,6 +1,12 @@
 # savoir-occitan
 projet de colaboration
 
+#Listes des bugs :
+
+- grocerycrud n'upload pas les images
+- les chemins relatifs doivent être dynamiques
+
+
 #configuration :
 
 ## config
