@@ -19,7 +19,7 @@ body {
 .panel-heading img{
     height: 100%;
     width: 100%;
-    object-fit: scale-down;
+    object-fit: contain;
 }
 
 .list-group-item li :nth-child(3n+2) {
