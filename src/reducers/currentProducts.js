@@ -1,8 +1,5 @@
-import {
-	INIT_DATA,
-	FILTER_PRODUCTS_CHANGE
-} from '../actions/actions'
-import { FETCH_DATA_FETCH_SUCCESS } from '../sagas/actionsSaga'
+import { INIT_DATA, FILTER_PRODUCTS_CHANGE } from '../actions/actions'
+import { FETCH_DATA_SUCCESS } from '../sagas/actionsSaga'
 
 
 const initialFilter = {
@@ -83,7 +80,7 @@ const currentProducts = (state = initialData, action) => {
 				products: action.data.products,
 				filter: initialFilter
 			}
-		case FETCH_DATA_FETCH_SUCCESS:
+		case FETCH_DATA_SUCCESS:
 			return {
 				products: action.data.products,
 				filter: initialFilter

@@ -7,10 +7,6 @@ import ProductsLink from '../containers/ProductsLink'
 
 
 class App extends React.Component {
-	// componentWillMount() {
-	// 	this.props.onInit();
-	// }
-
 	componentDidMount() {
 		this.props.onInit();
 	}

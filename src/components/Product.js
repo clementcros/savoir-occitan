@@ -2,6 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Panel, ListGroup, ListGroupItem, Glyphicon } from 'react-bootstrap'
 
+import { prefix_img } from '../constant.js'
+
 
 const putStar = (note) => {
 	let stars = [];
@@ -25,11 +27,15 @@ const Product = ({categories, product}) => {
 	});	
 	return (
 		<Panel>
-			<Panel.Heading>Image</Panel.Heading>
+			<Panel.Heading>
+				<img 
+					src={prefix_img + product.img_1}
+				/>
+			</Panel.Heading>
 			<Panel.Body>{product.name}</Panel.Body>
 			<ListGroup>
 				<ListGroupItem>{category}</ListGroupItem>
-				<ListGroupItem>{product.desc}</ListGroupItem>
+				<ListGroupItem>{product.describe}</ListGroupItem>
 				<ListGroupItem>{product.price}</ListGroupItem>
 			</ListGroup>
 			<Panel.Body>
@@ -38,7 +44,6 @@ const Product = ({categories, product}) => {
 		</Panel>
 	)
 }
-
 
 
 Product.propTypes = {

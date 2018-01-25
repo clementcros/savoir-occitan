@@ -1,445 +1,76 @@
 {
-	"cities": [
-		{
-			"id": "-1",
-			"name": "Bassan",
-			"code_post": "XXXXX",
-			"id_back": "0"
-		},
-		{
-			"id": "-2",
-			"name": "Lieuran",
-			"code_post": "XXXXX",
-			"id_back": "0"
-		},
-		{
-			"id": "-3",
-			"name": "Sérignan",
-			"code_post": "XXXXX",
-			"id_back": "0"
-		},
-		{
-			"id": "-4",
-			"name": "Valras",
-			"code_post": "XXXXX",
-			"id_back": "0"
-		},
-		{
-			"id": "-5",
-			"name": "Servian",
-			"code_post": "XXXXX",
-			"id_back": "0"
-		}
-	],
-	"clients": [
-		{
-			"id": "100",
-			"firstName": "John",
-			"lastName": "Duff",
-			"mail": "vlamonmail",
-			"userLog": "apero",
-			"pwd": "apero",
-			"desc": "some infos",
-			"products": [
-				{
-					"id": "10",
-					"id_city": "-1",
-					"id_client": "100",
-					"name": "wine",
-					"desc": "prod desc",
-					"img": [
-						"ici", "labas", "un peu plus loin"
-					],
-					"id_category": "1000",
-					"id_label": "-1",
-					"price": "12",
-					"special_offer": "parce que ca le vaut bien",
-					"note": "4"
-				},
-				{
-					"id": "20",
-					"id_city": "-1",
-					"id_client": "100",
-					"name": "beer",
-					"desc": "prod desc",
-					"img": [
-						"ici", "labas", "un peu plus loin"
-					],
-					"id_category": "2000",
-					"id_label": "-1",
-					"price": "6",
-					"special_offer": "parce que ca le vaut bien",
-					"note": "4"
-				},
-				{
-					"id": "30",
-					"id_city": "-1",
-					"id_client": "100",
-					"name": "sauciflar",
-					"desc": "prod desc",
-					"img": [
-						"ici", "labas", "un peu plus loin"
-					],
-					"id_category": "3000",
-					"id_label": "-1",
-					"price": "34",
-					"special_offer": "parce que ca le vaut bien",
-					"note": "5"
-				}
-			]
-		},
-		{
-			"id": "200",
-			"firstName": "Jean",
-			"lastName": "Bono",
-			"mail": "vlamonmail",
-			"userLog": "apero",
-			"pwd": "apero",
-			"desc": "some infos",
-			"products": [
-				{
-					"id": "40",
-					"id_city": "-1",
-					"id_client": "200",
-					"name": "white wine",
-					"desc": "du bon vin",
-					"img": [
-						"ici", "labas", "un peu plus loin"
-					],
-					"id_category": "1000",
-					"id_label": "-1",
-					"price": "56",
-					"special_offer": "parce que ca le vaut bien",
-					"note": "3"
-				},
-				{
-					"id": "41",
-					"id_city": "-1",
-					"id_client": "200",
-					"name": "red wine",
-					"desc": "du bon vin",
-					"img": [
-						"ici", "labas", "un peu plus loin"
-					],
-					"id_category": "1000",
-					"id_label": "-1",
-					"price": "33",
-					"special_offer": "parce que ca le vaut bien",
-					"note": "3"
-				},
-				{
-					"id": "42",
-					"id_city": "-1",
-					"id_client": "200",
-					"name": "pink wine",
-					"desc": "du bon vin",
-					"img": [
-						"ici", "labas", "un peu plus loin"
-					],
-					"id_category": "1000",
-					"id_label": "-1",
-					"price": "36",
-					"special_offer": "parce que ca le vaut bien",
-					"note": "4"
-				},
-				{
-					"id": "43",
-					"id_city": "-1",
-					"id_client": "200",
-					"name": "green wine",
-					"desc": "du bon vin",
-					"img": [
-						"ici", "labas", "un peu plus loin"
-					],
-					"id_category": "1000",
-					"id_label": "-1",
-					"price": "12",
-					"special_offer": "parce que ca le vaut bien",
-					"note": "2"
-				},
-				{
-					"id": "44",
-					"id_city": "-1",
-					"id_client": "200",
-					"name": "blue wine",
-					"desc": "du bon vin",
-					"img": [
-						"ici", "labas", "un peu plus loin"
-					],
-					"id_category": "1000",
-					"id_label": "-1",
-					"price": "29",
-					"special_offer": "parce que ca le vaut bien",
-					"note": "5"
-				}
-			]
-		},
-		{
-			"id": "300",
-			"firstName": "Alain",
-			"lastName": "Proviste",
-			"mail": "vlamonmail",
-			"userLog": "apero",
-			"pwd": "apero",
-			"desc": "some infos",
-			"products": [
-				{
-					"id": "51",
-					"id_city": "-1",
-					"id_client": "300",
-					"name": "paté",
-					"desc": "du bon vin",
-					"img": [
-						"ici", "labas", "un peu plus loin"
-					],
-					"id_category": "3000",
-					"id_label": "-1",
-					"price": "12",
-					"special_offer": "parce que ca le vaut bien",
-					"note": "4"
-				},
-				{
-					"id": "52",
-					"id_city": "-1",
-					"id_client": "300",
-					"name": "jambon cru",
-					"desc": "du bon vin",
-					"img": [
-						"ici", "labas", "un peu plus loin"
-					],
-					"id_category": "3000",
-					"id_label": "-1",
-					"price": "12",
-					"special_offer": "parce que ca le vaut bien",
-					"note": "4"
-				},
-				{
-					"id": "56",
-					"id_city": "-1",
-					"id_client": "300",
-					"name": "jambon blanc",
-					"desc": "du bon vin",
-					"img": [
-						"ici", "labas", "un peu plus loin"
-					],
-					"id_category": "3000",
-					"id_label": "-1",
-					"price": "12",
-					"special_offer": "parce que ca le vaut bien",
-					"note": "5"
-				},
-				{
-					"id": "58",
-					"id_city": "-1",
-					"id_client": "300",
-					"name": "bibine",
-					"desc": "du bon vin",
-					"img": [
-						"ici", "labas", "un peu plus loin"
-					],
-					"id_category": "2000",
-					"id_label": "-1",
-					"price": "12",
-					"special_offer": "parce que ca le vaut bien",
-					"note": "2"
-				}
-			]
-		}
-	],
-	"products": [
-		{
-			"id": "51",
-			"id_city": "-1",
-			"id_client": "300",
-			"name": "paté",
-			"desc": "du bon vin",
-			"img": [
-				"ici", "labas", "un peu plus loin"
-			],
-			"id_category": "3000",
-			"id_label": "-1",
-			"price": "12",
-			"special_offer": "parce que ca le vaut bien",
-			"note": "4"
-		},
-		{
-			"id": "52",
-			"id_city": "-1",
-			"id_client": "300",
-			"name": "jambon cru",
-			"desc": "du bon vin",
-			"img": [
-				"ici", "labas", "un peu plus loin"
-			],
-			"id_category": "3000",
-			"id_label": "-1",
-			"price": "12",
-			"special_offer": "parce que ca le vaut bien",
-			"note": "4"
-		},
-		{
-			"id": "56",
-			"id_city": "-1",
-			"id_client": "300",
-			"name": "jambon blanc",
-			"desc": "du bon vin",
-			"img": [
-				"ici", "labas", "un peu plus loin"
-			],
-			"id_category": "3000",
-			"id_label": "-1",
-			"price": "12",
-			"special_offer": "parce que ca le vaut bien",
-			"note": "3"
-		},
-		{
-			"id": "58",
-			"id_city": "-1",
-			"id_client": "300",
-			"name": "bibine",
-			"desc": "du bon vin",
-			"img": [
-				"ici", "labas", "un peu plus loin"
-			],
-			"id_category": "2000",
-			"id_label": "-1",
-			"price": "12",
-			"special_offer": "parce que ca le vaut bien",
-			"note": "3"
-		},
-		{
-			"id": "40",
-			"id_city": "-1",
-			"id_client": "200",
-			"name": "white wine",
-			"desc": "du bon vin",
-			"img": [
-				"ici", "labas", "un peu plus loin"
-			],
-			"id_category": "1000",
-			"id_label": "-1",
-			"price": "56",
-			"special_offer": "parce que ca le vaut bien",
-			"note": "4"
-		},
-		{
-			"id": "41",
-			"id_city": "-1",
-			"id_client": "200",
-			"name": "red wine",
-			"desc": "du bon vin",
-			"img": [
-				"ici", "labas", "un peu plus loin"
-			],
-			"id_category": "1000",
-			"id_label": "-1",
-			"price": "33",
-			"special_offer": "parce que ca le vaut bien",
-			"note": "2"
-		},
-		{
-			"id": "42",
-			"id_city": "-1",
-			"id_client": "200",
-			"name": "pink wine",
-			"desc": "du bon vin",
-			"img": [
-				"ici", "labas", "un peu plus loin"
-			],
-			"id_category": "1000",
-			"id_label": "-1",
-			"price": "36",
-			"special_offer": "parce que ca le vaut bien",
-			"note": "5"
-		},
-		{
-			"id": "43",
-			"id_city": "-1",
-			"id_client": "200",
-			"name": "green wine",
-			"desc": "du bon vin",
-			"img": [
-				"ici", "labas", "un peu plus loin"
-			],
-			"id_category": "1000",
-			"id_label": "-1",
-			"price": "12",
-			"special_offer": "parce que ca le vaut bien",
-			"note": "4"
-		},
-		{
-			"id": "44",
-			"id_city": "-1",
-			"id_client": "200",
-			"name": "blue wine",
-			"desc": "du bon vin",
-			"img": [
-				"ici", "labas", "un peu plus loin"
-			],
-			"id_category": "1000",
-			"id_label": "-1",
-			"price": "29",
-			"special_offer": "parce que ca le vaut bien",
-			"note": "4"
-		},
-		{
-			"id": "10",
-			"id_city": "-1",
-			"id_client": "100",
-			"name": "wine",
-			"desc": "prod desc",
-			"img": [
-				"ici", "labas", "un peu plus loin"
-			],
-			"id_category": "1000",
-			"id_label": "-1",
-			"price": "12",
-			"special_offer": "parce que ca le vaut bien",
-			"note": "5"
-		},
-		{
-			"id": "20",
-			"id_city": "-1",
-			"id_client": "100",
-			"name": "beer",
-			"desc": "prod desc",
-			"img": [
-				"ici", "labas", "un peu plus loin"
-			],
-			"id_category": "2000",
-			"id_label": "-1",
-			"price": "6",
-			"special_offer": "parce que ca le vaut bien",
-			"note": "2"
-		},
-		{
-			"id": "30",
-			"id_city": "-1",
-			"id_client": "100",
-			"name": "sauciflar",
-			"desc": "prod desc",
-			"img": [
-				"ici", "labas", "un peu plus loin"
-			],
-			"id_category": "3000",
-			"id_label": "-1",
-			"price": "34",
-			"special_offer": "parce que ca le vaut bien",
-			"note": "5"
-		}
-	],
-	"categories": [
-		{
-			"id": "1000",
-			"type": "wine"
-		},
-		{
-			"id": "2000",
-			"type": "binouz"
-		},
-		{
-			"id": "3000",
-			"type": "charcut"
-		}
-	]
+    "products": [
+        {
+            "id": "2",
+            "name": "paté en croute",
+            "id_client": "1",
+            "id_city": "32",
+            "describe": "<p>\r\n\tun bon pat&eacute; en croute de mes couilles</p>\r\n",
+            "img_1": "9bbbe-telecharge.jpg",
+            "img_2": "cea01-4256.jpg",
+            "img_3": "eec0e-i12176-pate-de-faisan-facile.jpg",
+            "id_category": "1",
+            "price": "25",
+            "special_offer": "y'en a pas"
+        },
+        {
+            "id": "4",
+            "name": "le produit",
+            "id_client": "1",
+            "id_city": "32",
+            "describe": "<p>\r\n\tvoici le produit qui d&eacute;fonce</p>\r\n",
+            "img_1": "658a0-4256.jpg",
+            "img_2": null,
+            "img_3": null,
+            "id_category": "1",
+            "price": "25",
+            "special_offer": "1 acheter 1 offert !"
+        },
+        {
+            "id": "5",
+            "name": "saucisson",
+            "id_client": "1",
+            "id_city": "32",
+            "describe": "<p>\r\n\t<span style=\"font-family: arial, sans-serif; font-size: 16px;\">La garniture est g&eacute;n&eacute;ralement compos&eacute;e de deux tiers &agrave; trois quarts de viande maigre et d&#39;un quart &agrave; un tiers de gras (issu principalement de lard dorsal du porc, appel&eacute; bardi&egrave;re).</span></p>\r\n",
+            "img_1": "a7999-images.jpg",
+            "img_2": null,
+            "img_3": null,
+            "id_category": "1",
+            "price": "30",
+            "special_offer": "1 acheté le deuxième payant"
+        },
+        {
+            "id": "6",
+            "name": "VIN rouge ",
+            "id_client": "1",
+            "id_city": "32",
+            "describe": "<p>\r\n\tvenez savourez notre nouveau c&eacute;page de l&#39;ann&eacute;e 2016 au comptoir du pochtron.</p>\r\n",
+            "img_1": "48f98-vins-terrasses-du-larzac-caves-paul-riquet-beziers-1100x729.jpg",
+            "img_2": null,
+            "img_3": null,
+            "id_category": "2",
+            "price": "12",
+            "special_offer": null
+        }
+    ],
+    "categories": [
+        {
+            "id": "1",
+            "type": "Charcuterie"
+        },
+        {
+            "id": "2",
+            "type": "vin"
+        }
+    ],
+    "city": [
+        {
+            "id": "32",
+            "code_post": "34500",
+            "name": "Béziers",
+            "img_1": "2dfa7-xvm8f995910-f751-11e6-b182-27a8794d746f-805x453.jpg",
+            "img_2": "9cc63-beziers.jpg",
+            "img_3": "981ea-marc-gerard-photography-cathedrale-st-nazaire-beziers-3-1024x682.jpg"
+        }
+    ]
 }

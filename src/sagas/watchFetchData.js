@@ -1,10 +1,7 @@
 import { call, put, takeEvery } from 'redux-saga/effects'
 
-import { FETCH_DATA, FETCH_DATA_FETCH_SUCCESS, FETCH_DATA_FETCH_FAILURE } from './actionsSaga'
+import { FETCH_DATA, FETCH_DATA_SUCCESS, FETCH_DATA_FAILURE } from './actionsSaga'
 import get from './api/get'
-
-
-//import { delay } from 'redux-saga'
 
 
 function* fetchData(action) {
@@ -13,14 +10,10 @@ function* fetchData(action) {
 		const url = "http://www.sitebetatest.fr/index.php/json/result/32";
 		//const param = action.id;
 		const data = yield call(get, url);
- 
-		//yield delay(3000);
 
-		console.log('data stringify dans watch : ' + JSON.stringify(data, null, 4));
-		console.log('data dans watch : ' + data);
-		yield put({type: FETCH_DATA_FETCH_SUCCESS, data: data});
+		yield put({type: FETCH_DATA_SUCCESS, data});
 	} catch (e) {
-		yield put({type: FETCH_DATA_FETCH_FAILURE, msg: "failed to load data"});
+		yield put({type: FETCH_DATA_FAILURE, msg: "failed to load data"});
 	}
 }
 
