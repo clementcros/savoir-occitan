@@ -41,12 +41,12 @@ class Examples extends CI_Controller
             $crud->set_table('citys');
             $crud->set_subject('une ville');
             $crud->required_fields('citys');
-            $crud->columns('id', 'city', 'post_code','image_1','iamge_2','image_3');
+            $crud->columns('id', 'name', 'code_post','img_1','img_2','img_3');
 
-            $crud->set_field_upload('image_1', 'assets/uploads/files');
-            $crud->set_field_upload('iamge_2', 'assets/uploads/files');
+            $crud->set_field_upload('img_1', 'assets/uploads/files');
+            $crud->set_field_upload('img_2', 'assets/uploads/files');
 
-            $crud->set_field_upload('image_3', 'assets/uploads/files');
+            $crud->set_field_upload('img_3', 'assets/uploads/files');
             $output = $crud->render();
 
             $this->_example_output($output);
@@ -63,11 +63,11 @@ class Examples extends CI_Controller
 
         $crud->set_theme('datatables');
         $crud->set_table('produit');
-        $crud->set_relation('id_ville', 'citys', 'city');
+        $crud->set_relation('id_city', 'citys', 'name');
         $crud->set_relation('id_category', 'category', 'type');
         $crud->set_relation('id_client', 'clients', 'nom');
         $crud->set_subject('Un produit');
-        $crud->columns('id', 'id_ville', 'id_client', 'nom', 'description', 'image_1', 'image_2', 'image_3', 'id_category', 'prix', 'offre_special');
+        $crud->columns('id', 'id_city', 'id_client', 'name', 'describe', 'img_1', 'img_2', 'img_3', 'id_category', 'price', 'special_offer','note');
 
         $crud->required_fields('lastName');
 
