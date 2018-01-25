@@ -7,9 +7,11 @@
     <link rel="manifest" href="/manifest.json">
     <link rel="shortcut icon" href="/favicon.ico">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
-    <title>React App</title></head>
+    <link rel="stylesheet" type="text/css" href="../../css/resultat.css">
+    <title>Savoir-occitan</title></head>
 <body>
 <noscript>You need to enable JavaScript to run this app.</noscript>
+
 <div id="root"></div>
 <script type="text/javascript" src="../../js/main.js"></script>
 </body>

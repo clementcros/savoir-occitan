@@ -20,7 +20,7 @@ class Result_Model extends CI_Model
     public function get_data($id)
     {
         $query = $this->db->query('SELECT citys.id, citys.name, produit.id, produit.id_client, produit.id_city, produit.name, produit.describe,
-                                  produit.img_1,produit.img_2,produit.img_3,produit.id_category,produit.price,produit.special_offer FROM citys
+                                  produit.img_1,produit.img_2,produit.img_3,produit.id_category,produit.price,produit.special_offer, produit.note FROM citys
                                    LEFT JOIN produit ON produit.id_city = citys.id WHERE citys.id =' . $id);
         return $query->result_array($query);
     }
