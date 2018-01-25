@@ -84,7 +84,7 @@
 
     <div class="git">
 
-        <a class="github-button" href="https://github.com/clementcros/savoir-occitan" aria-label="Follow clement and gabin on GitHub">Follow us</a><p style="color: white;">V0.1</p>
+        <a class="github-button" href="https://github.com/clementcros/savoir-occitan" aria-label="Follow clement and gabin on GitHub">Follow us</a><p style="color: white;">V0.2 beta</p>
 
     </div>
 
