@@ -36,7 +36,7 @@ class Result_city extends CI_Controller
     }
 
 
-    public function result_city($name)
+    public function result_city()
     {
         $search = $this->input->post('itemName');
         redirect('/result/'.$search);

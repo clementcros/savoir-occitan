@@ -16,9 +16,7 @@ class Json extends CI_Controller {
     }
 
     public function result($id){
-        $data['²data'] = $this->Result_Model->get_data($id);
-        $json = json_encode($data);
-        print_r($json);
-        $this->load->view('json');
+        $data['data'] = $this->Result_Model->get_data($id);
+        echo json_encode($this->Result_Model->get_data($id));
     }
 }
