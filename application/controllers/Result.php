@@ -27,7 +27,6 @@ class Result extends CI_Controller
      * @see https://codeigniter.com/user_guide/general/urls.html
      *
      */
-
     public function __construct()
     {
         parent::__construct();
@@ -39,42 +38,34 @@ class Result extends CI_Controller
         $this->load->helper('url_helper');
     }
 
-
     public function result($id)
     {
-//        $data['data'] = $this->Result_Model->get_articles('citys', $id);
+        $data['data'] = $this->Result_Model->get_articles('citys', $id);
         $result['result'] = $this->Result_Model->get_data($id);
         $carouselle['carouselle'] = $this->Carouselle_Model->get_carouselle($id);
         $product['produits'] = $this->Data_Product_Model->get_dataProduct($id);
         $category['category'] = $this->Category_Model->get_data($id);
-
-
-        $getData = count($product['produits']);
-        if ($getData == 0) {
-//            $data['list'] = $this->City_Model->get_articles('citys');
-//            $this->load->view('nothing', $data);
+        $getData =  0;//count($product['produits']);
+        if ($getData != 0) {
+            $data['list'] = $this->City_Model->get_articles('citys');
+            $this->load->view('nothing', $data);
             $this->load->library('javascript');
         } else {
-//            $json = json_encode($data);
-            $data =  $result + $carouselle + $category;
+            $json = json_encode($data);
+            $data = $data + $result + $carouselle + $category;
             $test = 0;
             if ($test != 0) {
                 $this->load->view('result', $data);
                 $this->load->library('javascript');
-            }
-            else {
+            } else {
                 $this->load->view('resultat');
-//                return $json;
+                return $json;
             }
         }
-
-
     }
 
-    public function jsonData($json) {
-
+    public function jsonData($json)
+    {
         $this->load->view('json', $json);
     }
-
-
 }
