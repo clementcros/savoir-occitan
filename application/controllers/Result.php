@@ -42,7 +42,7 @@ class Result extends CI_Controller
 
     public function result($id)
     {
-        $data['data'] = $this->Result_Model->get_articles('citys', $id);
+//        $data['data'] = $this->Result_Model->get_articles('citys', $id);
         $result['result'] = $this->Result_Model->get_data($id);
         $carouselle['carouselle'] = $this->Carouselle_Model->get_carouselle($id);
         $product['produits'] = $this->Data_Product_Model->get_dataProduct($id);
@@ -51,20 +51,20 @@ class Result extends CI_Controller
 
         $getData = count($product['produits']);
         if ($getData == 0) {
-            $data['list'] = $this->City_Model->get_articles('citys');
-            $this->load->view('nothing', $data);
+//            $data['list'] = $this->City_Model->get_articles('citys');
+//            $this->load->view('nothing', $data);
             $this->load->library('javascript');
         } else {
-            $json = json_encode($data);
-            $data = $data + $result + $carouselle + $category;
+//            $json = json_encode($data);
+            $data =  $result + $carouselle + $category;
             $test = 0;
-            if ($test == 0) {
+            if ($test != 0) {
                 $this->load->view('result', $data);
                 $this->load->library('javascript');
             }
             else {
                 $this->load->view('resultat');
-                return $json;
+//                return $json;
             }
         }
 

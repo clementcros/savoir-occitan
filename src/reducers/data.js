@@ -21,7 +21,8 @@ const formatData = (data) => {
 }
 
 
-const data = (state = [], action) => {
+const data = (state = initialData, action) => {
+	console.log('action : ' + action.type);
 	switch(action.type) {
 		case INIT_DATA:
 			return formatData(action.data);
