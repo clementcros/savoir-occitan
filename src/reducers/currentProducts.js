@@ -2,6 +2,7 @@ import {
 	INIT_DATA,
 	FILTER_PRODUCTS_CHANGE
 } from '../actions/actions'
+import { FETCH_DATA_FETCH_SUCCESS } from '../sagas/actionsSaga'
 
 
 const initialFilter = {
@@ -78,6 +79,11 @@ const formatFilter = (filter, oldFilter) => {
 const currentProducts = (state = initialData, action) => {
 	switch(action.type) {
 		case INIT_DATA:
+			return {
+				products: action.data.products,
+				filter: initialFilter
+			}
+		case FETCH_DATA_FETCH_SUCCESS:
 			return {
 				products: action.data.products,
 				filter: initialFilter

@@ -1,11 +1,10 @@
-import { takeEvery } from 'redux-saga/effects'
+import { fork } from 'redux-saga/effects'
 
-import { FETCH_DATA } from './actionsSaga'
 import watchFetchData from './watchFetchData'
 
 
 function* rootSaga() {
-  	yield takeEvery(FETCH_DATA, watchFetchData);
+  	yield fork(watchFetchData)
 }
 
 export default rootSaga;

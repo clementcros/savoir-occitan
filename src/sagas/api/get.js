@@ -2,13 +2,16 @@ import request from 'superagent'
 
 
 const get = ({url, param}) => {
-	request
-		.get('http://www.sitebetatest.fr/index.php/json/result/32')
+	return request
+		.post('http://occitan.my/index.php/json/result/32')
+		//.get('../src/data.json')
 		// .query({ query: 'Manny' })
 		// .query({ range: '1..5' })
 		// .query({ order: 'desc' })
-		.then(function(data) {
-			console.log('hello');
+		.then((data) => {
+			console.log('on passe dans le then du get');
+			console.log('data dans get : ' + JSON.stringify(data.body, null, 4));
+			return data.body;
 	});
 }
 

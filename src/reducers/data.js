@@ -1,4 +1,5 @@
 import { INIT_DATA } from '../actions/actions'
+import { FETCH_DATA_FETCH_SUCCESS } from '../sagas/actionsSaga'
 
 
 const initialData = {
@@ -25,6 +26,8 @@ const data = (state = initialData, action) => {
 	console.log('action : ' + action.type);
 	switch(action.type) {
 		case INIT_DATA:
+			return formatData(action.data);
+		case FETCH_DATA_FETCH_SUCCESS:
 			return formatData(action.data);
 		default:
 			return state;
