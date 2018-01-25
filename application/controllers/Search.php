@@ -30,8 +30,8 @@ class Search extends CI_Controller {
 
 
         if(!empty($this->input->get("q"))){
-            $this->db->like('city', $this->input->get("q"));
-            $query = $this->db->select('id,city as text')
+            $this->db->like('name', $this->input->get("q"));
+            $query = $this->db->select('id,name as text')
                 ->limit(10)
                 ->get("citys");
             $json = $query->result();

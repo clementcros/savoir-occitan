@@ -33,17 +33,17 @@
   </head>
   <?php
 
-  $image1 = $data['image_1'];
+  $image1 = $data['img_1'];
   if($image1 == null){
       $image1 = "0.png";
   }
 
-  $image2 = $data['iamge_2'];
+  $image2 = $data['img_2'];
   if($image2 == null){
       $image2 = "0.png";
   }
 
-  $image3 = $data['image_3'];
+  $image3 = $data['img_2'];
     if($image3 == null){
         $image3 = "0.png";
     }
@@ -55,7 +55,7 @@
       <div class="row">
         <div class="col-lg-3">
             <a class="btn btn-primary" href="<?php echo site_url('')?>" role="button">Accueil</a>
-          <h1 class="my-4"><?php echo $data['city'];?></h1>
+          <h1 class="my-4"><?php echo $data['name'];?></h1>
           <div class="list-group">
 
               <?php foreach($category as $cat): ?>
@@ -100,13 +100,13 @@
               <?php foreach($result as $products): ?>
             <div class="col-lg-4 col-md-6 mb-4">
               <div class="card h-100">
-                <a href="#"><img class="card-img-top" src="http://occitan.my/assets/uploads/files/<?php echo $products['image_1']?>" alt=""></a>
+                <a href="#"><img class="card-img-top" src="http://occitan.my/assets/uploads/files/<?php echo $products['img_1']?>" alt=""></a>
                 <div class="card-body">
                   <h4 class="card-title">
-                    <a href="<?php $products['id'] ?>"><?php echo $products['nom']?></a>
+                    <a href="<?php $products['id'] ?>"><?php echo $products['name']?></a>
                   </h4>
-                  <h5><?php echo $products['prix']?></h5>
-                  <p class="card-text"><?php echo $products['description']?></p>
+                  <h5><?php echo $products['price']?></h5>
+                  <p class="card-text"><?php echo $products['describe']?></p>
                 </div>
                 <div class="card-footer">
                   <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>

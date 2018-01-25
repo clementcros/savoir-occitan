@@ -15,7 +15,7 @@ class Data_Product_Model extends CI_Model
 
     public function get_dataProduct($id)
     {
-        $query = $this->db->query('SELECT COUNT(produit.nom) FROM  produit WHERE produit.id_ville = '.$id);
+        $query = $this->db->query('SELECT COUNT(produit.name) FROM  produit WHERE produit.id_city = '.$id);
         return $query->result();
     }
 }

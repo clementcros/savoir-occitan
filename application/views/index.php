@@ -43,7 +43,7 @@
 <br>
 <div class="list-ville">
 <?php foreach($list as $citys): ?>
-    <a class="btn btn-primary link" href="<?php  echo site_url('result/'.$citys['id'])?>" role="button"><?php echo $citys['city'] ?></a>
+    <a class="btn btn-primary link" href="<?php  echo site_url('result/'.$citys['id'])?>" role="button"><?php echo $citys['name'] ?></a>
 <?php endforeach; ?>
     <script src="js/search.js"></script>
     <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
