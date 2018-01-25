@@ -2,6 +2,7 @@ import { connect } from 'react-redux'
 
 import App from '../components/App'
 import { initData } from '../actions/actions'
+import { FETCH_DATA } from '../sagas/actionsSaga'
 
 
 const mapStateToProps = (state, props) => {
@@ -14,7 +15,8 @@ const mapStateToProps = (state, props) => {
 const mapDisplayToProps = (dispatch, props) => {
 	return {
 		onInit: () => {
-			dispatch(initData(data))
+			//dispatch(initData(data));
+			dispatch({type: FETCH_DATA});
 		}
 	}
 }
@@ -87,7 +89,7 @@ const data = {
 					],
 					"id_category": "1000",
 					"id_label": "-1",
-					"prix": "12",
+					"price": "12",
 					"special_offer": "parce que ca le vaut bien",
 					"note": "4"
 				},
@@ -102,7 +104,7 @@ const data = {
 					],
 					"id_category": "2000",
 					"id_label": "-1",
-					"prix": "6",
+					"price": "6",
 					"special_offer": "parce que ca le vaut bien",
 					"note": "4"
 				},
@@ -117,7 +119,7 @@ const data = {
 					],
 					"id_category": "3000",
 					"id_label": "-1",
-					"prix": "34",
+					"price": "34",
 					"special_offer": "parce que ca le vaut bien",
 					"note": "5"
 				}
@@ -143,7 +145,7 @@ const data = {
 					],
 					"id_category": "1000",
 					"id_label": "-1",
-					"prix": "56",
+					"price": "56",
 					"special_offer": "parce que ca le vaut bien",
 					"note": "3"
 				},
@@ -158,7 +160,7 @@ const data = {
 					],
 					"id_category": "1000",
 					"id_label": "-1",
-					"prix": "33",
+					"price": "33",
 					"special_offer": "parce que ca le vaut bien",
 					"note": "3"
 				},
@@ -173,7 +175,7 @@ const data = {
 					],
 					"id_category": "1000",
 					"id_label": "-1",
-					"prix": "36",
+					"price": "36",
 					"special_offer": "parce que ca le vaut bien",
 					"note": "4"
 				},
@@ -188,7 +190,7 @@ const data = {
 					],
 					"id_category": "1000",
 					"id_label": "-1",
-					"prix": "12",
+					"price": "12",
 					"special_offer": "parce que ca le vaut bien",
 					"note": "2"
 				},
@@ -203,7 +205,7 @@ const data = {
 					],
 					"id_category": "1000",
 					"id_label": "-1",
-					"prix": "29",
+					"price": "29",
 					"special_offer": "parce que ca le vaut bien",
 					"note": "5"
 				}
@@ -229,7 +231,7 @@ const data = {
 					],
 					"id_category": "3000",
 					"id_label": "-1",
-					"prix": "12",
+					"price": "12",
 					"special_offer": "parce que ca le vaut bien",
 					"note": "4"
 				},
@@ -244,7 +246,7 @@ const data = {
 					],
 					"id_category": "3000",
 					"id_label": "-1",
-					"prix": "12",
+					"price": "12",
 					"special_offer": "parce que ca le vaut bien",
 					"note": "4"
 				},
@@ -259,7 +261,7 @@ const data = {
 					],
 					"id_category": "3000",
 					"id_label": "-1",
-					"prix": "12",
+					"price": "12",
 					"special_offer": "parce que ca le vaut bien",
 					"note": "5"
 				},
@@ -274,7 +276,7 @@ const data = {
 					],
 					"id_category": "2000",
 					"id_label": "-1",
-					"prix": "12",
+					"price": "12",
 					"special_offer": "parce que ca le vaut bien",
 					"note": "2"
 				}
@@ -293,7 +295,7 @@ const data = {
 			],
 			"id_category": "3000",
 			"id_label": "-1",
-			"prix": "12",
+			"price": "12",
 			"special_offer": "parce que ca le vaut bien",
 			"note": "4"
 		},
@@ -308,7 +310,7 @@ const data = {
 			],
 			"id_category": "3000",
 			"id_label": "-1",
-			"prix": "12",
+			"price": "12",
 			"special_offer": "parce que ca le vaut bien",
 			"note": "4"
 		},
@@ -323,7 +325,7 @@ const data = {
 			],
 			"id_category": "3000",
 			"id_label": "-1",
-			"prix": "12",
+			"price": "12",
 			"special_offer": "parce que ca le vaut bien",
 			"note": "3"
 		},
@@ -338,7 +340,7 @@ const data = {
 			],
 			"id_category": "2000",
 			"id_label": "-1",
-			"prix": "12",
+			"price": "12",
 			"special_offer": "parce que ca le vaut bien",
 			"note": "3"
 		},
@@ -353,7 +355,7 @@ const data = {
 			],
 			"id_category": "1000",
 			"id_label": "-1",
-			"prix": "56",
+			"price": "56",
 			"special_offer": "parce que ca le vaut bien",
 			"note": "4"
 		},
@@ -368,7 +370,7 @@ const data = {
 			],
 			"id_category": "1000",
 			"id_label": "-1",
-			"prix": "33",
+			"price": "33",
 			"special_offer": "parce que ca le vaut bien",
 			"note": "2"
 		},
@@ -383,7 +385,7 @@ const data = {
 			],
 			"id_category": "1000",
 			"id_label": "-1",
-			"prix": "36",
+			"price": "36",
 			"special_offer": "parce que ca le vaut bien",
 			"note": "5"
 		},
@@ -398,7 +400,7 @@ const data = {
 			],
 			"id_category": "1000",
 			"id_label": "-1",
-			"prix": "12",
+			"price": "12",
 			"special_offer": "parce que ca le vaut bien",
 			"note": "4"
 		},
@@ -413,7 +415,7 @@ const data = {
 			],
 			"id_category": "1000",
 			"id_label": "-1",
-			"prix": "29",
+			"price": "29",
 			"special_offer": "parce que ca le vaut bien",
 			"note": "4"
 		},
@@ -428,7 +430,7 @@ const data = {
 			],
 			"id_category": "1000",
 			"id_label": "-1",
-			"prix": "12",
+			"price": "12",
 			"special_offer": "parce que ca le vaut bien",
 			"note": "5"
 		},
@@ -443,7 +445,7 @@ const data = {
 			],
 			"id_category": "2000",
 			"id_label": "-1",
-			"prix": "6",
+			"price": "6",
 			"special_offer": "parce que ca le vaut bien",
 			"note": "2"
 		},
@@ -458,7 +460,7 @@ const data = {
 			],
 			"id_category": "3000",
 			"id_label": "-1",
-			"prix": "34",
+			"price": "34",
 			"special_offer": "parce que ca le vaut bien",
 			"note": "5"
 		}

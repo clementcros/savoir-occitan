@@ -31,19 +31,35 @@
     <link href="shop-homepage.css" rel="stylesheet">
 
   </head>
+  <?php
 
+  $image1 = $data['image_1'];
+  if($image1 == null){
+      $image1 = "0.png";
+  }
+
+  $image2 = $data['iamge_2'];
+  if($image2 == null){
+      $image2 = "0.png";
+  }
+
+  $image3 = $data['image_3'];
+    if($image3 == null){
+        $image3 = "0.png";
+    }
+
+  ?>
   <body>
     <div class="container">
 
       <div class="row">
 
         <div class="col-lg-3">
-
           <h1 class="my-4"><?php echo $data['city'];?></h1>
           <div class="list-group">
-            <a href="#" class="list-group-item">Category 1</a>
-            <a href="#" class="list-group-item">Category 2</a>
-            <a href="#" class="list-group-item">Category 3</a>
+              <?php foreach($category as $cat): ?>
+            <a href="#" class="list-group-item"><?php echo $cat['type'];?></a>
+              <?php endforeach; ?>
           </div>
 
         </div>
@@ -60,13 +76,13 @@
 
             <div class="carousel-inner" role="listbox">
               <div class="carousel-item active">
-                <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="First slide">
+                <img class="d-block img-fluid" src="http://occitan.my/assets/uploads/files/<?php echo $image1;?>" alt="First slide">
               </div>
               <div class="carousel-item">
-                <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="Second slide">
+                <img class="d-block img-fluid" src="http://occitan.my/assets/uploads/files/<?php echo $image2;?>" alt="Second slide">
               </div>
               <div class="carousel-item">
-                <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="Third slide">
+                <img class="d-block img-fluid" src="http://occitan.my/assets/uploads/files/<?php echo $image3;?>" alt="Third slide">
               </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -110,9 +126,9 @@
 
     </div>
     <!-- /.container -->
-
+    </div>
     <!-- Footer -->
-    <footer class="py-5 bg-dark">
+    <footer class="py-5 bg-dark position">
       <div class="container">
         <p class="m-0 text-center text-white">Copyright &copy; le savoir-occitan 2018</p>
       </div>
@@ -126,12 +142,17 @@
 
   </body>
 <style>
-    /*.card-img-top {*/
-        /*max-height: 150px;*/
-        /*max-width: 300px;*/
-        /*width: 700px;*/
-        /*height: 400px;*/
-    /*}*/
+  .carousel-item img{
+      width: 850px;
+      height:400px;
+  }
+    .card img {
+        overflow: hidden;
+        object-fit: contain;
+    }
+    footer {
+        position: relative; bottom: 0; left: 0; right: 0
+            }
 </style>
 
 </html>

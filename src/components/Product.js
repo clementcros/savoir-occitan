@@ -30,7 +30,7 @@ const Product = ({categories, product}) => {
 			<ListGroup>
 				<ListGroupItem>{category}</ListGroupItem>
 				<ListGroupItem>{product.desc}</ListGroupItem>
-				<ListGroupItem>{product.prix}</ListGroupItem>
+				<ListGroupItem>{product.price}</ListGroupItem>
 			</ListGroup>
 			<Panel.Body>
 				{putStar(product.note)}

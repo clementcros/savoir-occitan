@@ -56,5 +56,11 @@ $route['translate_uri_dashes'] = FALSE;
 
 $route['search'] = "search/index";
 $route['result/(:any)'] = 'Result/result/$1';
-$route['Json'] = "Result/jsonData";
+$route['json'] = "Result/json";
 $route ['administration'] = 'Examples';
+
+// Routes du controller Admin
+
+$route['admin/horaire'] = 'Admin/getHoraire';
+$route['admin/connexion'] = 'Admin/connexion';
+$route['admin/disconnect'] = "Admin/disconnect";
