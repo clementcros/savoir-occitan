@@ -52,15 +52,15 @@ if($image3 == null){
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner">
                     <div class="item active">
-                        <img src="http://occitan.my/assets/uploads/files/<?php echo $image1;?>"  style="width: 1100px; height: 400px;">
+                        <img src="http://www.sitebetatest.fr/assets/uploads/files/<?php echo $image1;?>"  style="width: 1150px; height: 400px;">
                     </div>
 
                     <div class="item">
-                        <img src="http://occitan.my/assets/uploads/files/<?php echo $image2;?>"  style="width: 1100px; height: 400px;">
+                        <img src="http://www.sitebetatest.fr/assets/uploads/files/<?php echo $image2;?>"  style="width: 1150px; height: 400px;">
                     </div>
 
                     <div class="item">
-                        <img src="http://occitan.my/assets/uploads/files/<?php echo $image3;?>"  style="width: 1100px; height: 400px;">
+                        <img src="http://www.sitebetatest.fr/assets/uploads/files/<?php echo $image3;?>"  style="width: 1150px; height: 400px;">
                     </div>
                 </div>
 
@@ -76,4 +76,66 @@ if($image3 == null){
 <div id="root"></div>
 <script type="text/javascript" src="../../js/main.js"></script>
 </body>
+
+<style>
+
+    body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width: 100%;
+        background-image: url("http://www.sitebetatest.fr/img/vigne1.jpg");
+        background-clip: padding-box;
+        width : 100%;
+        height: 100%;
+
+        /* Full height */
+
+        /* Center and scale the image nicely */
+        background-repeat: no-repeat;
+        background-size: cover;
+
+    }
+    .panel-heading img{
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+    }
+
+    .list-group-item li :nth-child(3n+2) {
+        widht: 150px;
+        height:200px;
+        overflow: hidden;
+    }
+
+    .filter {
+        background-color: white;
+        border-radius: 5px;
+        padding: 5px;
+    }
+    .label-default {
+        line-height: 5%;
+    }
+
+
+    .panel-default {
+        border-radius: 15px;
+    }
+
+    .desc-prod{
+        height: 150px;
+        overflow: hidden;
+
+    }
+
+    .desc-prod p{
+        overflow: hidden;
+    }
+
+    .active img {
+        overflow: hidden;
+
+    }
+
+</style>
 </html>
