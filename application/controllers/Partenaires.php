@@ -18,7 +18,8 @@ class Partenaires extends CI_Controller
 
     public function index()
     {
+        $data['data'] = $this->Partenaire_Model->get_data();
 
-        $this->load->view('partenaire');
+        $this->load->view('partenaire', $data);
     }
 }

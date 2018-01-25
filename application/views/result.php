@@ -53,10 +53,11 @@
     <div class="container">
 
       <div class="row">
-
         <div class="col-lg-3">
+            <a class="btn btn-primary" href="<?php echo site_url('')?>" role="button">Accueil</a>
           <h1 class="my-4"><?php echo $data['city'];?></h1>
           <div class="list-group">
+
               <?php foreach($category as $cat): ?>
             <a href="#" class="list-group-item"><?php echo $cat['type'];?></a>
               <?php endforeach; ?>
