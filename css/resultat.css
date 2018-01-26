@@ -16,16 +16,31 @@ body {
     background-size: cover;
 
 }
-.panel-heading img{
-    height: 100%;
-    width: 100%;
-    object-fit: contain;
-}
+/*.panel-heading img{*/
+    /*!*height: 100%;*!*/
+    /*!*width: 100%;*!*/
+    /*!*object-fit: contain;*!*/
+    /*width: 200px;*/
+    /*height: auto;*/
+    /*object-fit: cover;*/
+/*}*/
 
-.list-group-item li :nth-child(3n+2) {
-    widht: 150px;
-    height:200px;
+.panel-heading{
+    position: relative;
+    width: 100%;
+    height: 220px;
     overflow: hidden;
+}
+.panel-heading img {
+    position: absolute;
+    padding: 10px;
+    left: 50%;
+    top: 50%;
+    height: 110%;
+    width: auto;
+    -webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
 }
 
 .filter {
